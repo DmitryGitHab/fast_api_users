@@ -5,7 +5,9 @@ from database import get_db
 from services import user as UserService
 from dto import user as UserDTO
 
+
 router = APIRouter()
+
 
 @router.post('/', tags=["user"])
 async def create(data: UserDTO.User=None, db: Session = Depends(get_db)):
